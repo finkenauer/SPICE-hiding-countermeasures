@@ -9,7 +9,7 @@
 
 * ------------------------------ *
 * 2-input NAND
-.subckt nand_PCSL a0 a1 b0 b1 clk out0 out1 vdd  
+.subckt nand_PCSL a0 a1 b0 b1 req out0 out1 vdd  
 MP1 vdd req q0  vdd pch width = 'log_efWp'   length = 'length' 
 MP2 q0  0   n1  vdd pch width = 'log_efWp*2' length = 'length' * dummy transistor
 MP3 n1  a1  vdd vdd pch width = 'log_efWp*2' length = 'length' 
@@ -37,7 +37,7 @@ X1 q1 out1 vdd 0 _CADMOS_INVD1BWP * nand
 
 * ------------------------------ *
 * 2-input NOR
-.subckt nor_PCSL a0 a1 b0 b1 clk out0 out1 vdd 
+.subckt nor_PCSL a0 a1 b0 b1 req out0 out1 vdd 
 MP1 vdd req q0  vdd pch width = 'log_efWp'   length = 'length' 
 MP2 q0  b1  n1  vdd pch width = 'log_efWp*2' length = 'length'  
 MP3 n1  a1  vdd vdd pch width = 'log_efWp*2' length = 'length' 
@@ -65,7 +65,7 @@ X1 q1 out1 vdd 0 _CADMOS_INVD1BWP * nor
 
 * ------------------------------ *
 * 2-input XOR
-.subckt xor_PCSL a0 a1 b0 b1 clk out0 out1 vdd 
+.subckt xor_PCSL a0 a1 b0 b1 req out0 out1 vdd 
 MP1 vdd req q0  vdd pch width = 'log_efWp'   length = 'length' 
 MP2 vdd a0  n1  vdd pch width = 'log_efWp*2' length = 'length'  
 MP3 n1  b1  q0  vdd pch width = 'log_efWp*2' length = 'length' 
@@ -101,7 +101,7 @@ X1 q1 out1 vdd 0 _CADMOS_INVD1BWP * xor
 * ------------------------------ *
 
 * ------------------------------ *
-.subckt nand_PCSL_mac a0 a1 b0 b1 clk out0 out1 vdd 
+.subckt nand_PCSL_mac a0 a1 b0 b1 req out0 out1 vdd 
 XP1 vdd req q0  vdd pch_mac width = 'log_efWp'   length = 'length' 
 XP2 q0  0   n1  vdd pch_mac width = 'log_efWp*2' length = 'length' * dummy transistor
 XP3 n1  a1  vdd vdd pch_mac width = 'log_efWp*2' length = 'length' 
@@ -128,7 +128,7 @@ X1 q1 out1 vdd 0 _CADMOS_INVD1BWP_MAC * nand
 .ends nand_PCSL_mac	
 
 * ------------------------------ *
-.subckt nor_PCSL_mac a0 a1 b0 b1 clk out0 out1 vdd 
+.subckt nor_PCSL_mac a0 a1 b0 b1 req out0 out1 vdd 
 XP1 vdd req q0  vdd pch_mac width = 'log_efWp'   length = 'length' 
 XP2 q0  b1  n1  vdd pch_mac width = 'log_efWp*2' length = 'length'  
 XP3 n1  a1  vdd vdd pch_mac width = 'log_efWp*2' length = 'length' 
@@ -155,7 +155,7 @@ X1 q1 out1 vdd 0 _CADMOS_INVD1BWP * nor
 .ends nor_PCSL_mac
 
 * ------------------------------ *
-.subckt xor_PCSL_mac a0 a1 b0 b1 clk out0 out1 vdd 
+.subckt xor_PCSL_mac a0 a1 b0 b1 req out0 out1 vdd 
 XP1 vdd req q0  vdd pch_mac width = 'log_efWp'   length = 'length' 
 XP2 vdd a0  n1  vdd pch_mac width = 'log_efWp*2' length = 'length'  
 XP3 n1  b1  q0  vdd pch_mac width = 'log_efWp*2' length = 'length' 
